@@ -1,0 +1,127 @@
+{
+  "user_id": "U1002",
+  "display_name": "中风险样例用户",
+  "anomaly_score": 0.56,
+  "risk_level": "medium",
+  "attribute_curvature": 0.31,
+  "neighbor_risk_ratio": 0.38,
+  "similarity_gap": 0.42,
+  "behavior_deviation": 0.47,
+  "high_risk_neighbors": 2,
+  "suspected_group_size": 4,
+  "related_nodes": [
+    {
+      "id": "U1002",
+      "label": "目标用户",
+      "risk_level": "medium",
+      "risk_score": 0.56,
+      "role": "target",
+      "relation": "self",
+      "communication_count": 66,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1021",
+      "label": "高频联系人",
+      "risk_level": "high",
+      "risk_score": 0.82,
+      "role": "core",
+      "relation": "frequent_contact",
+      "communication_count": 31,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1022",
+      "label": "中风险联系人",
+      "risk_level": "medium",
+      "risk_score": 0.58,
+      "role": "member",
+      "relation": "same_cluster",
+      "communication_count": 19,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1023",
+      "label": "高风险联系人",
+      "risk_level": "high",
+      "risk_score": 0.77,
+      "role": "member",
+      "relation": "night_contact",
+      "communication_count": 12,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1024",
+      "label": "普通联系人",
+      "risk_level": "low",
+      "risk_score": 0.28,
+      "role": "contact",
+      "relation": "weak_contact",
+      "communication_count": 4,
+      "is_suspected_group": false
+    }
+  ],
+  "graph_edges": [
+    {
+      "source": "U1002",
+      "target": "U1021",
+      "weight": 31,
+      "relation": "frequent",
+      "time_window": "night"
+    },
+    {
+      "source": "U1002",
+      "target": "U1022",
+      "weight": 19,
+      "relation": "cluster",
+      "time_window": "mixed"
+    },
+    {
+      "source": "U1002",
+      "target": "U1023",
+      "weight": 12,
+      "relation": "night",
+      "time_window": "night"
+    },
+    {
+      "source": "U1021",
+      "target": "U1023",
+      "weight": 8,
+      "relation": "cluster",
+      "time_window": "night"
+    },
+    {
+      "source": "U1002",
+      "target": "U1024",
+      "weight": 4,
+      "relation": "weak",
+      "time_window": "daytime"
+    }
+  ],
+  "abnormal_behaviors": [
+    "与两个高风险节点存在较高频联系",
+    "夜间通信比例高于低风险样例",
+    "节点行为与局部子图存在中等偏离"
+  ],
+  "evidence": [
+    "异常分数为 0.56，处于中风险区间",
+    "邻居风险比例为 38%，存在 2 个高风险邻居",
+    "节点与局部子图相似度差为 0.42，需要结合关系结构复核",
+    "目标节点位于 4 人疑似关联群体边缘"
+  ],
+  "group_features": {
+    "group_id": "DG-M01",
+    "core_node": "U1021",
+    "member_count": 4,
+    "high_risk_member_count": 2,
+    "density": 0.5,
+    "features": [
+      "小规模高频联系人群",
+      "存在夜间联系集中现象",
+      "目标节点不是核心节点，但与核心节点直接相连"
+    ]
+  },
+  "review_suggestion": "建议进入普通复核队列，优先核查夜间通信对象和 U1021 的关联链路。",
+  "data_source": "prototype_demo",
+  "is_demo_data": true
+}

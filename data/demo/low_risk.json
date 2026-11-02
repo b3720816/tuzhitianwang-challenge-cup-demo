@@ -1,0 +1,101 @@
+{
+  "user_id": "U1001",
+  "display_name": "低风险样例用户",
+  "anomaly_score": 0.18,
+  "risk_level": "low",
+  "attribute_curvature": 0.09,
+  "neighbor_risk_ratio": 0.08,
+  "similarity_gap": 0.12,
+  "behavior_deviation": 0.15,
+  "high_risk_neighbors": 0,
+  "suspected_group_size": 0,
+  "related_nodes": [
+    {
+      "id": "U1001",
+      "label": "目标用户",
+      "risk_level": "low",
+      "risk_score": 0.18,
+      "role": "target",
+      "relation": "self",
+      "communication_count": 42,
+      "is_suspected_group": false
+    },
+    {
+      "id": "U1011",
+      "label": "稳定联系人",
+      "risk_level": "low",
+      "risk_score": 0.16,
+      "role": "contact",
+      "relation": "family_like",
+      "communication_count": 21,
+      "is_suspected_group": false
+    },
+    {
+      "id": "U1012",
+      "label": "普通联系人",
+      "risk_level": "low",
+      "risk_score": 0.24,
+      "role": "contact",
+      "relation": "normal_contact",
+      "communication_count": 11,
+      "is_suspected_group": false
+    },
+    {
+      "id": "U1013",
+      "label": "低频联系人",
+      "risk_level": "medium",
+      "risk_score": 0.41,
+      "role": "contact",
+      "relation": "occasional_contact",
+      "communication_count": 4,
+      "is_suspected_group": false
+    }
+  ],
+  "graph_edges": [
+    {
+      "source": "U1001",
+      "target": "U1011",
+      "weight": 21,
+      "relation": "regular",
+      "time_window": "daytime"
+    },
+    {
+      "source": "U1001",
+      "target": "U1012",
+      "weight": 11,
+      "relation": "regular",
+      "time_window": "daytime"
+    },
+    {
+      "source": "U1001",
+      "target": "U1013",
+      "weight": 4,
+      "relation": "weak",
+      "time_window": "mixed"
+    }
+  ],
+  "abnormal_behaviors": [
+    "通信对象稳定，未发现密集高风险关联",
+    "夜间通信占比处于正常样例范围",
+    "节点行为与局部通信环境差异较低"
+  ],
+  "evidence": [
+    "异常分数为 0.18，低于中风险阈值",
+    "邻居风险比例为 8%，高风险邻居数量为 0",
+    "节点与局部子图相似度差为 0.12，未显示显著偏离",
+    "当前未归入疑似团伙结构"
+  ],
+  "group_features": {
+    "group_id": null,
+    "core_node": null,
+    "member_count": 0,
+    "high_risk_member_count": 0,
+    "density": 0.0,
+    "features": [
+      "未发现稳定疑似团伙结构"
+    ]
+  },
+  "review_suggestion": "暂不进入重点复核，可作为低风险对照样例保留观察。",
+  "data_source": "prototype_demo",
+  "is_demo_data": true
+}

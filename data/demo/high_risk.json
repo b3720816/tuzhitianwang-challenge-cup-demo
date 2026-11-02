@@ -1,0 +1,171 @@
+{
+  "user_id": "U1003",
+  "display_name": "高风险样例用户",
+  "anomaly_score": 0.91,
+  "risk_level": "high",
+  "attribute_curvature": 0.67,
+  "neighbor_risk_ratio": 0.78,
+  "similarity_gap": 0.72,
+  "behavior_deviation": 0.83,
+  "high_risk_neighbors": 5,
+  "suspected_group_size": 8,
+  "related_nodes": [
+    {
+      "id": "U1003",
+      "label": "目标用户",
+      "risk_level": "high",
+      "risk_score": 0.91,
+      "role": "target",
+      "relation": "self",
+      "communication_count": 138,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1031",
+      "label": "疑似核心节点",
+      "risk_level": "high",
+      "risk_score": 0.95,
+      "role": "core",
+      "relation": "core_contact",
+      "communication_count": 44,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1032",
+      "label": "高风险成员",
+      "risk_level": "high",
+      "risk_score": 0.89,
+      "role": "member",
+      "relation": "frequent_contact",
+      "communication_count": 33,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1033",
+      "label": "高风险成员",
+      "risk_level": "high",
+      "risk_score": 0.86,
+      "role": "member",
+      "relation": "night_contact",
+      "communication_count": 27,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1034",
+      "label": "桥接节点",
+      "risk_level": "medium",
+      "risk_score": 0.64,
+      "role": "bridge",
+      "relation": "bridge_contact",
+      "communication_count": 19,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1035",
+      "label": "高风险外联节点",
+      "risk_level": "high",
+      "risk_score": 0.81,
+      "role": "member",
+      "relation": "external_contact",
+      "communication_count": 15,
+      "is_suspected_group": true
+    },
+    {
+      "id": "U1036",
+      "label": "高风险外联节点",
+      "risk_level": "high",
+      "risk_score": 0.79,
+      "role": "member",
+      "relation": "external_contact",
+      "communication_count": 13,
+      "is_suspected_group": true
+    }
+  ],
+  "graph_edges": [
+    {
+      "source": "U1003",
+      "target": "U1031",
+      "weight": 44,
+      "relation": "core",
+      "time_window": "night"
+    },
+    {
+      "source": "U1003",
+      "target": "U1032",
+      "weight": 33,
+      "relation": "frequent",
+      "time_window": "night"
+    },
+    {
+      "source": "U1003",
+      "target": "U1033",
+      "weight": 27,
+      "relation": "frequent",
+      "time_window": "night"
+    },
+    {
+      "source": "U1003",
+      "target": "U1034",
+      "weight": 19,
+      "relation": "bridge",
+      "time_window": "mixed"
+    },
+    {
+      "source": "U1031",
+      "target": "U1032",
+      "weight": 22,
+      "relation": "cluster",
+      "time_window": "night"
+    },
+    {
+      "source": "U1031",
+      "target": "U1033",
+      "weight": 17,
+      "relation": "cluster",
+      "time_window": "night"
+    },
+    {
+      "source": "U1034",
+      "target": "U1035",
+      "weight": 15,
+      "relation": "external",
+      "time_window": "mixed"
+    },
+    {
+      "source": "U1034",
+      "target": "U1036",
+      "weight": 13,
+      "relation": "external",
+      "time_window": "mixed"
+    }
+  ],
+  "abnormal_behaviors": [
+    "短时间高频联系多个高风险节点",
+    "夜间通信活跃度明显偏高",
+    "邻域中高风险节点占比显著高于普通样例",
+    "目标节点处于疑似团伙核心连接位置"
+  ],
+  "evidence": [
+    "异常分数为 0.91，显著高于高风险阈值",
+    "邻居风险比例为 78%，存在 5 个高风险邻居",
+    "节点与局部子图相似度差为 0.72，显示明显结构偏离",
+    "行为偏离度为 0.83，夜间高频联系集中",
+    "目标节点位于 8 人疑似团伙核心链路"
+  ],
+  "group_features": {
+    "group_id": "DG-H01",
+    "core_node": "U1031",
+    "member_count": 8,
+    "high_risk_member_count": 5,
+    "density": 0.68,
+    "features": [
+      "高风险成员占比高",
+      "核心节点与目标用户存在夜间高频联系",
+      "桥接节点连接外联高风险对象",
+      "整体关系密度高于中风险样例"
+    ]
+  },
+  "review_suggestion": "建议进入重点人工复核流程，优先核查 U1031、U1034 及外联高风险节点的通信时间分布和关联链路。",
+  "data_source": "prototype_demo",
+  "is_demo_data": true
+}

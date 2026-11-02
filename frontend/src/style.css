@@ -1,0 +1,49 @@
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7fb; color: #1f2937; }
+main { max-width: 1180px; margin: 0 auto; padding: 24px; }
+.competition-main { max-width: 1520px; padding: 18px 24px 40px; }
+.topbar { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-bottom: 24px; }
+h1 { margin: 0; font-size: 24px; }
+h2 { margin-top: 0; }
+nav { display: flex; gap: 12px; }
+a, .button { color: #1d4ed8; text-decoration: none; font-weight: 600; }
+.card { background: white; border-radius: 16px; padding: 20px; margin: 16px 0; box-shadow: 0 8px 24px rgba(15,23,42,0.06); }
+.narrow { max-width: 560px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.grid div { background: #f8fafc; border: 1px solid #e5e7eb; padding: 12px; border-radius: 12px; }
+.grid strong { display: block; font-size: 12px; color: #64748b; margin-bottom: 4px; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e5e7eb; }
+button, select, input { border: 1px solid #cbd5e1; border-radius: 10px; padding: 10px 12px; margin: 8px 8px 8px 0; background: white; }
+button { background: #2563eb; color: white; cursor: pointer; border: 0; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+.link-button { background: transparent; color: #1d4ed8; padding: 0 6px; margin: 0 0 0 8px; font-weight: 600; }
+.link-button.danger { color: #b91c1c; }
+.inline { display: inline-flex; align-items: center; gap: 8px; }
+label { display: block; margin: 12px 0; }
+input { display: block; width: 100%; box-sizing: border-box; }
+.badge { display: inline-block; border-radius: 999px; padding: 3px 9px; background: #e5e7eb; }
+.completed, .low { background: #dcfce7; color: #166534; }
+.running, .medium { background: #fef3c7; color: #92400e; }
+.failed, .high { background: #fee2e2; color: #991b1b; }
+.pending { background: #dbeafe; color: #1e40af; }
+.error { color: #b91c1c; }
+.muted { color: #64748b; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; word-break: break-all; }
+.graph-box { overflow: auto; border: 1px solid #e5e7eb; border-radius: 14px; background: #f8fafc; }
+.graph-tools, .tabs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 12px; }
+.graph-tools label { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
+.graph-box svg { width: 100%; min-width: 520px; height: 520px; }
+.edge { stroke: #94a3b8; stroke-width: 1.2; opacity: 0.65; }
+.key-edge { stroke: #ef4444; stroke-width: 2.4; opacity: 0.9; }
+.bridge-edge { stroke: #8b5cf6; stroke-width: 2.2; opacity: 0.9; stroke-dasharray: 6 4; }
+.graph-node { cursor: pointer; }
+.graph-node circle { stroke: white; stroke-width: 2; }
+.graph-node circle.core { stroke: #111827; stroke-width: 3; }
+.graph-node circle.bridge-node { stroke: #8b5cf6; stroke-width: 3; stroke-dasharray: 4 3; }
+.graph-node circle.matched { stroke: #22c55e; stroke-width: 4; }
+.graph-node text { font-size: 11px; fill: #334155; pointer-events: none; }
+.secondary { background: #e2e8f0; color: #334155; }
+.copyable-id { display: inline-flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+@media (max-width: 720px) {
+  main, .competition-main { padding: 12px; }
+}
